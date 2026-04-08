@@ -8,7 +8,7 @@ const bookPromise = fetch('/booksData.json')
 
 const AllBooks = () => {
     const books = use(bookPromise);
-    console.log(books, "books");
+    // console.log(books, "books");
     return (
         <div className='my-12 max-w-7xl mx-auto'>
             <h2 className='font-bold text-3xl text-center'>Books</h2>
