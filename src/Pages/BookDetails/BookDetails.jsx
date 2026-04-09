@@ -1,5 +1,5 @@
 
-import { useContext, useState } from 'react';
+import { useContext, } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { BookContext } from '../../Context/BookContext';
 
@@ -12,7 +12,7 @@ const books = useLoaderData();
 // console.log(books, "books");
 const expectedBook = books.find((book) => book.bookId == bookId)
 // console.log(expectedBook, "expectedBook")
-const {handleMarkAsRead, storeBook, handleWishList} = useContext(BookContext);
+const {handleMarkAsRead,  handleWishList} = useContext(BookContext);
 // console.log(handleMarkAsRead, storeBook, handleWishList)
 
 
@@ -28,7 +28,11 @@ const {handleMarkAsRead, storeBook, handleWishList} = useContext(BookContext);
 
         <div className="card-body">
           <h2 className="text-2xl font-semibold">{expectedBook.bookName}</h2>
-          <h3 className='font-semibold text-xl'>Author: {expectedBook.author}</h3>
+          
+          <div className='flex items-center justify-between text-gray-600 border-t-2 mt-2'>
+            <h3 className='font-semibold text-xl'>Author: {expectedBook.author}</h3>
+          <h2 className="text-xl font-semibold">Pages: {expectedBook.totalPages}</h2>
+          </div>
           <p>{expectedBook.review}</p>
           <div className="card-actions justify-start mt-4">
             <button onClick={()=> handleMarkAsRead(expectedBook)} className='btn'>Mark as Read</button>

@@ -19,7 +19,10 @@ const BookCard = ({book}) => {
                 }
                 </div>
                   <h2 className='font-bold text-2xl'>{book.bookName}</h2>
-                <p className='font-semibold text-lg'>{book.author}</p>
+                <div className='flex justify-between text-gray-700'>
+                  <p className='font-semibold text-lg'>{book.author}</p>
+                  <p className='font-semibold text-lg'>Pages: {book.totalPages}</p>
+                </div>
                 <div className="card-actions justify-between border-t border-dashed pt-4">
                   <div className="badge badge-outline">{book.category}</div>
                   <div className="badge badge-outline">{book.rating} <CiStar /></div>
