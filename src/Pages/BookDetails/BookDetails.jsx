@@ -12,8 +12,8 @@ const books = useLoaderData();
 // console.log(books, "books");
 const expectedBook = books.find((book) => book.bookId == bookId)
 // console.log(expectedBook, "expectedBook")
-const {handleMarkAsRead, storeBook} = useContext(BookContext);
-console.log(handleMarkAsRead, storeBook)
+const {handleMarkAsRead, storeBook, handleWishList} = useContext(BookContext);
+// console.log(handleMarkAsRead, storeBook, handleWishList)
 
 
 
@@ -32,7 +32,7 @@ console.log(handleMarkAsRead, storeBook)
           <p>{expectedBook.review}</p>
           <div className="card-actions justify-start mt-4">
             <button onClick={()=> handleMarkAsRead(expectedBook)} className='btn'>Mark as Read</button>
-            <button className='btn btn-primary'>Add to Wishlist</button>
+            <button onClick={()=> handleWishList(expectedBook)} className='btn btn-primary'>Add to Wishlist</button>
           </div>
         </div>
       </div>
