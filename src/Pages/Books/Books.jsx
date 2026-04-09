@@ -1,13 +1,13 @@
-import React from 'react';
-import { useLoaderData } from 'react-router';
+import React, { useContext } from 'react';
+import { BookContext } from '../../Context/BookContext';
 
 const Books = () => {
-    const books = useLoaderData();
-        console.log(books, "books");
+        const { storeBook } = useContext(BookContext);
+        console.log(storeBook)
     return (
         
         <div>
-            <h3>Books</h3>
+            <h3>Listed Books</h3>
         </div>
     );
 };
